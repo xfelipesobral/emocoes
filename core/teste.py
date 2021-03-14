@@ -1,4 +1,4 @@
-import camera
+from definicoes import *
 
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -6,12 +6,8 @@ import numpy as np
 
 from keras.utils import to_categorical
 
-# carrega variáveis
-emocao = camera.emocoesBase
-modelo = camera.modelo
-
 # importa base
-data = pd.read_csv('modelo/fer2013.csv')
+data = pd.read_csv('modelo/fer2013.csv') # https://drive.google.com/file/d/1ydunNrl-eWyBUlHjOsnZRvBSK_1Rf6ZX/view?usp=sharing
 data.head()
 
 # separa base de testes
