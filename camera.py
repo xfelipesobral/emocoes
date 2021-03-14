@@ -1,5 +1,5 @@
-#from core.definicoes import *
 from core.definicoes import *
+from core.preparaImagem import *
 
 import cv2
 import face_recognition
@@ -23,12 +23,14 @@ while True:
         left *= 4
 
         # Posicao da imagem
-        x = left - 40
-        y = top - 40
-        xy = right + 40
-        yx = bottom + 30
+        x = left 
+        y = top 
+        xy = right 
+        yx = bottom 
         face = frame[y:yx, x:xy]
-        cv2.imwrite('teste.jpg', face)
+        face = cv2.resize(face, (48, 48), interpolation = cv2.INTER_AREA)
+
+        processaImagem(face)
 
         # Desenha retângulo
         cv2.rectangle(frame, (left, top), (right, bottom), (0, 255, 255), 1)
