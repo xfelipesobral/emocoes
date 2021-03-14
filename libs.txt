@@ -1,0 +1,11 @@
+Python: python 3.8.8 
+Pip: pip 21.0.1
+
+pip install tensorflow
+pip install keras
+pip install opencv-python
+pip install cmake
+pip install dlib
+pip install face-recognition
+pip install pandas
+pip install matplotlib
