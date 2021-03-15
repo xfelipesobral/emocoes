@@ -38,5 +38,7 @@ def processaImagem(imagem):
 
     resultado = modelo.predict(img)
 
-    imprimir(matriz, resultado, 0)
-    #cv2.imshow('Imagem', cinza)
+    valores = dict(zip(range(0,7), resultado[0]))    
+    posicao = max(valores, key=lambda k: valores[k]) # Pega emoção mais bem classificada
+
+    return posicao

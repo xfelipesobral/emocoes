@@ -30,10 +30,14 @@ while True:
         face = frame[y:yx, x:xy]
         face = cv2.resize(face, (48, 48), interpolation = cv2.INTER_AREA)
 
-        processaImagem(face)
+        ePosicao = processaImagem(face)
 
         # Desenha retângulo
-        cv2.rectangle(frame, (left, top), (right, bottom), (0, 255, 255), 1)
+        cv2.rectangle(frame, (left, top), (right, bottom), (0, 0, 255), 1)
+
+        # Draw a label with a name below the face
+        cv2.rectangle(frame, (left, bottom - 35), (right, bottom), (0, 0, 255), cv2.FILLED)
+        cv2.putText(frame, str(emocao[ePosicao]), (left + 6, bottom - 6), cv2.FONT_HERSHEY_DUPLEX, 1.0, (255, 255, 255), 1)
 
     cv2.imshow('Video', frame)
 
